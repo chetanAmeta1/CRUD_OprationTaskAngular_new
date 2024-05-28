@@ -1,0 +1,22 @@
+.addUserForm{
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid;
+text-align: center;
+}
+.row{
+    height: 50px;
+    width: 70%;
+    margin-left: 15%;
+}
+.row input{
+    width: 80%;
+    height: 30px;
+    border-radius: 10px;
+   text-align: center;
+}
+.err{
+    width: 100%;
+    float: left;
+    color: red;
+}

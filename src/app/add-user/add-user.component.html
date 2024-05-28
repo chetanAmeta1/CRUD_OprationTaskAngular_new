@@ -1,0 +1,23 @@
+<div class="addUserForm">
+    <h2>Add User Form</h2>
+    <form [formGroup]="addUser" (ngSubmit)="isEdit?Update():submit()">
+        <div class="row" >
+            <input formControlName="uname" class="form-contorl" placeholder="Enter your name"/>
+            
+            <span *ngIf="isFormSubmit && form['uname'].hasError('required')" class="err">Name  is required!</span>
+        </div>
+        <div class="row" >
+            <input formControlName="phone"  placeholder="Enter your phone number"/>
+            <span *ngIf="isFormSubmit && form['phone'].hasError('required')" class="err">Phone number is required!</span>
+        </div>
+        <div class="row" >
+            <input formControlName="email"  placeholder="Enter your email address" />
+            <span *ngIf="isFormSubmit && form['email'].hasError('required')" class="err">Email address is required!</span>
+        </div>
+        <div class="row" >
+            <button type="submit" *ngIf="!isEdit">Submit</button>
+            <button type="submit" *ngIf="isEdit">Update</button>
+        </div>
+    </form>
+    
+</div>

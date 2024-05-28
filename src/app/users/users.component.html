@@ -1,0 +1,28 @@
+
+
+<div class="dataGrid">
+    <h2>User Data</h2>
+    <button class="addBtn" routerLink="/adduser">Add User</button>
+    <table  *ngIf="data.length > 0 else dataNotFound" >
+        <thead>
+            <tr>
+            <th>User Name</th>
+            <th>Phone Number</th>
+            <th>Email Address</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody> 
+                <tr *ngFor="let row of data">                
+                    <td>{{row?.uname}}</td>
+                    <td>{{row?.phone}}</td>
+                    <td>{{row?.email}}</td>
+                    <td><button routerLink="/edituser/{{row.id}}">Edit</button><button (click)="deleteData(row.id)">Delete</button></td>
+                </tr> 
+           
+        </tbody>
+    </table>
+<ng-template #dataNotFound>
+<h3 class="notFound">Data not found!</h3>
+</ng-template>
+</div>
